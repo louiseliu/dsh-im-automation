@@ -1,0 +1,93 @@
+/* Use the Host theme so settings follow DSH appearance and user fonts. */
+.dia-root {
+  --dia-line: var(--dsw-alias-border-l4, color-mix(in srgb, currentColor 14%, transparent));
+  --dia-muted: var(--dsw-alias-label-tertiary, GrayText);
+  --dia-fill: var(--dsw-alias-bg-module-platform, color-mix(in srgb, currentColor 4%, transparent));
+  --dia-hover: var(--dsw-alias-interactive-bg-hover, color-mix(in srgb, currentColor 5%, transparent));
+  --dia-accent: var(--dsw-alias-state-business-primary, #4d6bfe);
+  box-sizing: border-box; max-width: 760px; margin: 0 auto; padding: 24px;
+  color: var(--dsw-alias-label-primary, inherit); font-family: var(--dsw-font-family, inherit); font-size: 14px; line-height: 1.6;
+}
+.dia-root header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.dia-root h2 { margin: 0 0 6px; font-size: 20px; font-weight: 600; line-height: 1.4; letter-spacing: -.3px; }
+.dia-root h3 { margin: 24px 0 12px; font-size: 14px; font-weight: 600; }
+.dia-root p { margin: 8px 0; line-height: 1.6; }
+.dia-root header p, .dia-muted { color: var(--dia-muted); font-size: 12px; }
+.dia-note, .dia-warning { padding: 12px 14px; border-radius: var(--dsw-radius-md, 12px); background: var(--dia-fill); font-size: 12px; }
+.dia-warning { border-inline-start: 2px solid var(--dsw-alias-label-warning, #b58433); }
+.dia-root label { display: block; font-size: 14px; margin: 20px 0; }
+.dia-root select, .dia-root input:not([type=checkbox]), .dia-root textarea {
+  display: block; box-sizing: border-box; width: 100%; min-height: 36px; margin-top: 8px; padding: 7px 12px;
+  border: .5px solid var(--dia-line); border-radius: var(--dsw-radius-md, 12px);
+  color: inherit; background: var(--dsw-alias-bg-layer-1, Canvas); font: inherit; font-size: 14px; line-height: 22px;
+}
+.dia-root input::placeholder, .dia-root textarea::placeholder { color: var(--dsw-alias-label-dimmed, GrayText); }
+.dia-root textarea { resize: vertical; min-height: 112px; }
+.dia-root fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.dia-root input[type=checkbox] { accent-color: var(--dia-accent); }
+.dia-switch { display: flex !important; align-items: center; gap: 8px; }
+.dia-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.dia-root button {
+  box-sizing: border-box; cursor: pointer; min-height: 36px; padding: 6px 14px; color: inherit;
+  background: transparent; border: .5px solid var(--dia-line); border-radius: var(--dsw-radius-md, 12px);
+  font: inherit; font-size: 13px; line-height: 22px; transition: background .15s;
+}
+.dia-root button:hover:not(:disabled) { background: var(--dia-hover); }
+.dia-root button:disabled, .dia-root select:disabled { cursor: default; opacity: .4; }
+.dia-root .dia-primary { background: var(--dsw-alias-button-primary-fill, #292a2d); color: var(--dsw-alias-label-primary-foreground, white); border-color: transparent; }
+.dia-root .dia-primary:hover:not(:disabled) { background: var(--dsw-alias-button-primary-hover, #44464a); }
+.dia-root .dia-link { border: 0; color: var(--dia-muted); padding-left: 0; margin-top: 8px; }
+.dia-history { padding: 0; list-style: none; }
+.dia-history li { padding: 14px 0; border-top: .5px solid var(--dia-line); }
+.dia-history li div { display: flex; gap: 12px; justify-content: space-between; }
+.dia-history time, .dia-history small { font-size: 12px; color: var(--dia-muted); overflow-wrap: anywhere; }
+.dia-history p { margin: 6px 0; font-size: 12px; color: var(--dia-muted); }
+.dia-root :focus-visible { outline: 2px solid var(--dia-accent); outline-offset: 2px; }
+.dia-days { display: flex; flex-wrap: wrap; gap: 12px; }
+.dia-steps { display: flex; gap: 24px; list-style: none; padding: 0 0 20px; margin: 0 0 24px; border-bottom: .5px solid var(--dia-line); font-size: 12px; }
+.dia-steps li { display: flex; gap: 8px; align-items: center; color: var(--dia-muted); }
+.dia-steps li[aria-current=step] { color: inherit; font-weight: 600; }
+.dia-steps li span { display: grid; place-items: center; width: 22px; height: 22px; background: var(--dia-fill); border-radius: 50%; font-size: 11px; }
+.dia-steps li[aria-current=step] span { background: var(--dsw-alias-label-primary, #292a2d); color: var(--dsw-alias-bg-layer-3, white); }
+.dia-root details { margin: 18px 0; font-size: 12px; }
+.dia-root summary { cursor: pointer; padding: 8px 0; color: var(--dia-muted); }
+.dia-root summary:hover { color: var(--dsw-alias-label-primary, inherit); }
+.dia-list-heading { display: flex; align-items: center; justify-content: space-between; margin-top: 28px; }
+.dia-list-heading h3 { margin: 0; }
+.dia-task-list { padding: 0; list-style: none; display: grid; gap: 8px; }
+.dia-root .dia-task-card { display: flex; flex-direction: column; gap: 10px; width: 100%; padding: 16px; border-color: var(--dia-line); text-align: left; }
+.dia-card-top, .dia-card-result { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.dia-card-top strong { font-size: 14px; font-weight: 500; overflow-wrap: anywhere; }
+.dia-card-result { font-size: 12px; color: var(--dia-muted); }
+.dia-badge { white-space: nowrap; border-radius: var(--dsw-radius-sm, 8px); padding: 2px 8px; background: var(--dia-fill); color: var(--dia-muted); font-size: 11px; line-height: 20px; }
+.dia-empty, .dia-review { padding: 20px; border: .5px solid var(--dia-line); border-radius: var(--dsw-radius-lg, 16px); background: var(--dia-fill); }
+.dia-empty h3, .dia-review h4 { margin-top: 0; }
+.dia-review h4 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+.dia-review dl { display: grid; grid-template-columns: 80px 1fr; gap: 16px; font-size: 13px; padding-top: 16px; border-top: .5px solid var(--dia-line); }
+.dia-review dt { color: var(--dia-muted); }
+.dia-review dd { margin: 0; overflow-wrap: anywhere; }
+.dia-prompt { white-space: pre-wrap; overflow-wrap: anywhere; }
+.dia-feedback { padding: 18px 20px; border: .5px solid var(--dia-line); border-radius: var(--dsw-radius-lg, 16px); background: var(--dia-fill); margin: 16px 0 24px; }
+.dia-feedback h3 { margin: 0 0 10px; font-size: 16px; }
+.dia-feedback p { margin: 8px 0; font-size: 13px; }
+.dia-feedback .dia-muted { font-size: 12px; }
+.dia-edit-settings { border-top: .5px solid var(--dia-line); border-bottom: .5px solid var(--dia-line); padding: 6px 0; }
+@media (max-width: 500px) {
+  .dia-root { padding: 16px; }
+  .dia-root header { align-items: flex-start; flex-wrap: wrap; }
+  .dia-history li div, .dia-card-top, .dia-card-result { align-items: flex-start; flex-direction: column; gap: 6px; }
+  .dia-steps { gap: 12px; }
+  .dia-review { padding: 16px; }
+  .dia-review dl { grid-template-columns: 64px 1fr; gap: 12px; }
+}
+
+.dia-compact-list { gap: 0; border-top: .5px solid var(--dia-line); }
+.dia-compact-list > li { border-bottom: .5px solid var(--dia-line); }
+.dia-root .dia-task-row { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 64px; padding: 10px 8px; border: 0; border-radius: var(--dsw-radius-sm, 8px); text-align: left; }
+.dia-row-name { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 2px; }
+.dia-row-name strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 500; }
+.dia-row-state { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; font-size: 12px; }
+.dia-row-state time, .dia-row-arrow { color: var(--dia-muted); }
+.dia-row-state time { font-size: 11px; }
+.dia-row-arrow { font-size: 20px; }
+@media (max-width: 500px) { .dia-root .dia-task-row { gap: 8px; } .dia-row-state { max-width: 45%; font-size: 11px; } }
